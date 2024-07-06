@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<!-- landing page and form to get stock ticker from user -->
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'visualizer/style.css' %}">
+    <title>Insert Ticker</title>
+</head>
+
+<body>
+    <div>
+        <h1>Analyze any stock instantly</h1>
+        <h2>Get started now</h2>
+        <form action="{% url 'visualizer:visual' %}" method="post"> <!-- polls:vote points to urls -->
+            {% csrf_token %} <!-- use for all post to protect from cross site request forgeries-->
+                <label for = "ticker">Insert Stock Ticker</label>
+                <input type="text" id="ticker" name="ticker" required>
+                <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

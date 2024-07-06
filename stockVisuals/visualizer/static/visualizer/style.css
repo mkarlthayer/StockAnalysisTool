@@ -1,0 +1,11 @@
+body {
+    background-color: aquamarine;
+    align-content: center;
+    
+}
+div {
+    font-family: sans-serif;
+    margin: auto;
+    width: 50%;
+    padding: 10% 0;
+}
