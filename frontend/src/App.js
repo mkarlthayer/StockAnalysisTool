@@ -71,7 +71,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:8000/visualizer/') 
+    axios.get('https://fullstackstockanalysis.onrender.com/') 
     .then(res => { 
         setAllStocks(res.data)
     }) 
