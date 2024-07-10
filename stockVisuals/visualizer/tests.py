@@ -7,9 +7,12 @@ from .models import stockData
 # Create your tests here.
 class StockAPITestCase(APITestCase):
     def setUp(self):
-        self.valid_symbol = 'IBM'
+        self.valid_symbol = 'NVDA'
         self.invalid_symbol = 'INVALID'
-        self.url = reverse('stock_api')
+        self.url = reverse('visualizerData')
 
+    def test_get_all_stocks(self):
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         

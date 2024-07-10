@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"; 
 
 import BarChart from './BarChart'
+import LineChart from './LineChart';
 
 
 function App() { 
@@ -115,6 +116,7 @@ function App() {
   let totalRevenue = []
   let operatingCashflow = []
   let totalDebt = []
+  let debtToEquity = []
 
   const yearsOfData = selectedStock[0].data.yearsOfData
   for (let i=yearsOfData; i>=0; i--) {
@@ -122,7 +124,7 @@ function App() {
     netIncome.push(selectedStock[0].data[`netIncomeYear${String(i)}`])
     totalRevenue.push(selectedStock[0].data[`totalRevenueYear${String(i)}`])
     operatingCashflow.push(selectedStock[0].data[`operatingCashflowYear${String(i)}`])
-    totalDebt.push(selectedStock[0].data[`totalLiabilitiesYear${String(i)}`])
+    debtToEquity.push(selectedStock[0].data[`totalLiabilitiesYear${String(i)}`] / selectedStock[0].data[`totalEquityYear${String(i)}`])
   }
 
   //store data in variable for ChartJS
@@ -165,15 +167,16 @@ function App() {
     ],
   }
 
-  const totalDebtData = {
+  const debtToEquityData = {
     labels: dates,
     datasets: [
       {
         label: 'Total Debt',
-        data: totalDebt,
-        backgroundColor: 'rgba(192, 100, 100, 0.2)',
-        borderColor: 'rgba(192, 100, 100, 1)',
+        data: debtToEquity,
+        backgroundColor: 'rgba(192, 100, 192, 0.2)',
+        borderColor: 'rgba(192, 100, 192, 1)',
         borderWidth: 1,
+        tension: 0.4,
       },
     ],
   }
@@ -221,7 +224,7 @@ function App() {
             <BarChart chartData={operatingCashflowData} title = "Yearly Free Cash Flow" />
           </div>
           <div className='graph-container'>
-            <BarChart chartData={totalDebtData} title = "Yearly Total Debt" />
+            <LineChart chartData={debtToEquityData} title = "Yearly Debt to Equity Ration" />
           </div>
         </section>
         </div>
