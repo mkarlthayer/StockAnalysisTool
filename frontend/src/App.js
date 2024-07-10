@@ -92,7 +92,7 @@ function App() {
     if (allStocks.some(stock => stock.symbol === input.toUpperCase())) {
       setSubmit(input.toUpperCase())
     } else {
-      axios.post("http://localhost:8000/visualizer/", { symbol: input.toUpperCase() })
+      axios.post("https://fullstackstockanalysis.onrender.com/", { symbol: input.toUpperCase() })
       .then((res) => {
         setAllStocks(exisistingStocks => [...exisistingStocks, res.data])
         setSubmit(input.toUpperCase())
