@@ -115,7 +115,6 @@ function App() {
   let netIncome = []
   let totalRevenue = []
   let operatingCashflow = []
-  let totalDebt = []
   let debtToEquity = []
 
   const yearsOfData = selectedStock[0].data.yearsOfData
