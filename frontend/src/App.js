@@ -68,10 +68,10 @@ function App() {
   const [input, setInput] = useState('')
   const [submit, setSubmit] = useState('NVDA')
 
-
+  const apiURL = process.env.REACT_APP_API_URL
 
   useEffect(() => {
-    axios.get('https://fullstackstockanalysis.onrender.com/') 
+    axios.get(apiURL) 
     .then(res => { 
         setAllStocks(res.data)
     }) 
@@ -92,7 +92,7 @@ function App() {
     if (allStocks.some(stock => stock.symbol === input.toUpperCase())) {
       setSubmit(input.toUpperCase())
     } else {
-      axios.post("https://fullstackstockanalysis.onrender.com/", { symbol: input.toUpperCase() })
+      axios.post(apiURL, { symbol: input.toUpperCase() })
       .then((res) => {
         setAllStocks(exisistingStocks => [...exisistingStocks, res.data])
         setSubmit(input.toUpperCase())
