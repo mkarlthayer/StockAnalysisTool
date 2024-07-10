@@ -23,10 +23,10 @@ FRONTEND_DIR = BASE_DIR.parent / 'frontend'
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&o2c*fljgh5=f86$2kxp5^yop5vp25nfq40#bh8i396p*2gx6c'
+SECRET_KEY = mySecretKey
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = ['127.0.0.1']
 

@@ -17,7 +17,6 @@ class stockAPIView(APIView):
         return Response(stocks) 
   
     def post(self, request): 
-        API_KEY = 'PJLIPSEVJPTI12YA'
         symbol = request.data.get('symbol')
 
         company_overview_url = f'https://www.alphavantage.co/query?function=OVERVIEW&symbol={symbol}&apikey={API_KEY}'
