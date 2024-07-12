@@ -5,7 +5,6 @@ import axios from "axios";
 import BarChart from './BarChart'
 import LineChart from './LineChart';
 
-
 function App() { 
   const [allStocks, setAllStocks] = useState([{
     "symbol": "NVDA",
