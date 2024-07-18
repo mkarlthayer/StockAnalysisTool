@@ -67,7 +67,7 @@ function App() {
   const [input, setInput] = useState('')
   const [submit, setSubmit] = useState('NVDA')
 
-  const apiURL = process.env.REACT_APP_API_URL
+  const apiURL = 'https://fullstackstockanalysis-production-d4ef.up.railway.app/'
 
   useEffect(() => {
     axios.get(apiURL) 
@@ -185,6 +185,7 @@ function App() {
         {/*form for user to submit stock ticker*/}
         
         <div className='header'>
+          <h1 className='stockName'>Selected Stock: {selectedStock[0].symbol}</h1>
           <div className="input" >
           <form onSubmit={handleSubmit}>
             <input
@@ -194,7 +195,6 @@ function App() {
             <button className='button' type='submit'>Enter</button>
           </form>
           </div>
-          <h1 className='stockName'>Selected Stock: {selectedStock[0].symbol}</h1>
         </div>
         
         <div className = "container">

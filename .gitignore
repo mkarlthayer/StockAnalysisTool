@@ -3,6 +3,8 @@ PollsTutorial
 djangoEnv
 .vscode
 
+/stockVisuals/db.sqlite3
+
 # dependencies
 /node_modules
 /.pnp
