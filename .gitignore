@@ -2,8 +2,9 @@ node_modules
 PollsTutorial
 djangoEnv
 .vscode
-
-/stockVisuals/db.sqlite3
+.env
+__pycache__/
+*.py[cod]
 
 # dependencies
 /node_modules
