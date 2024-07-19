@@ -3,7 +3,8 @@ PollsTutorial
 djangoEnv
 .vscode
 .env
-__pycache__/
+stockVisuals/stockVisuals/__pycache__/
+stockVisuals/visualizer/__pycache__/
 *.py[cod]
 
 # dependencies
